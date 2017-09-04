@@ -1,0 +1,18 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header_log_in.html" %}
+	<div class="row divider">
+		<hr>
+	</div>
+
+<div class = "row ">
+	<div class = "col-md-12 col-sm-12">
+	<article>
+		<h2>{{this_item.name}}</h2>
+		<p> {{this_item.description}}</p>
+	</article>
+    <a href="{{url_for('edit_item', items = this_item.name)}}">Edit</a>
+    <a href="{{url_for('delete_item', items = this_item.name)}}">Delete</a>
+</div>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header_log_in.html" %}
+	<div class="row divider">
+		<hr>
+	</div>
+
+<div class = 'flash'>
+	{% with messages = get_flashed_messages() %}
+      	{% if messages %}
+	        <ul>
+	        {% for message in messages %}
+	            <li> <strong> {{ message }} </strong> </li>
+	        {% endfor %}
+	        </ul>
+        {% endif %}
+    {% endwith %}
+</div>
+
+<div class = "row ">
+	<div class = "col-md-4 col-sm-4 mycontent-left">
+		<h2> Categories</h2>
+		<ul class="list-unstyled">
+		{%for category in categories%}
+			<li> <a href="{{ url_for('show_items', category = category.name) }}"> {{ category.name}} </a></li>
+		{%endfor%}
+		</ul>
+	</div>
+	<div class = "col-md-8 col-sm-8">
+		<a href="{{url_for('create_item')}}">Add Items</a>
+		<h2> Latest Items</h2>
+		<ul class="list-unstyled">
+		{%for item in items%}
+			<li> <a href="{{url_for('show_single_item', item = item.name, category = item.category.name)}}"> {{item.name}} </a></li>
+		{%endfor%}
+		</ul>
+	</div>
+</div>
+
+{% endblock %}

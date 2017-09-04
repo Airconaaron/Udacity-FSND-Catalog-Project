@@ -1,0 +1,24 @@
+.catalog {
+	font-size: 200%;
+}
+.top-menu {
+}
+.login-button{
+	padding: 3px;
+}
+.mycontent-left {
+  border-right: 1px dashed #333;
+}
+
+.flash {
+	background-color: #98FB98;
+	width:100%;
+	text-decoration: none;
+
+}
+
+.flash li {
+	list-style-type: none;
+	text-align: center;
+
+}
